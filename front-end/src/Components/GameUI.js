@@ -1,35 +1,25 @@
 import React from 'react'
 
-const GameUI = () => {
+const GameUI = ({ player }) => {
+	const insertValue = e => {
+		if (e.target.innerHTML === '') {
+			e.target.innerHTML = `<h1 id='${e.target.id}t'>${
+				player === 'one' ? 'X' : 'O'
+			}</h1>`
+		}
+	}
+
 	return (
 		<div className='game'>
-			<div id='game1' className='button'>
-				<h1 id='game1t'>X</h1>
-			</div>
-			<div id='game2' className='button'>
-				<h1 id='game2t'>O</h1>
-			</div>
-			<div id='game3' className='button'>
-				<h1 id='game3t'>O</h1>
-			</div>
-			<div id='game4' className='button'>
-				<h1 id='game4t'>O</h1>
-			</div>
-			<div id='game5' className='button'>
-				<h1 id='game5t'>X</h1>
-			</div>
-			<div id='game6' className='button'>
-				<h1 id='game6t'>O</h1>
-			</div>
-			<div id='game7' className='button'>
-				<h1 id='game7t'>X</h1>
-			</div>
-			<div id='game8' className='button'>
-				<h1 id='game8t'>O</h1>
-			</div>
-			<div id='game9' className='button'>
-				<h1 id='game9t'>X</h1>
-			</div>
+			<div id='game1' onClick={insertValue} className='button'></div>
+			<div id='game2' onClick={insertValue} className='button'></div>
+			<div id='game3' onClick={insertValue} className='button'></div>
+			<div id='game4' onClick={insertValue} className='button'></div>
+			<div id='game5' onClick={insertValue} className='button'></div>
+			<div id='game6' onClick={insertValue} className='button'></div>
+			<div id='game7' onClick={insertValue} className='button'></div>
+			<div id='game8' onClick={insertValue} className='button'></div>
+			<div id='game9' onClick={insertValue} className='button'></div>
 		</div>
 	)
 }
