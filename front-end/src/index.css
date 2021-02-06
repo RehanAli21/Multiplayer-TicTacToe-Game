@@ -6,8 +6,9 @@
 * {
 	margin: 0;
 	padding: 0;
-	font-family: sans-serif;
+	font-family: 'Segoe UI', sans-serif;
 	box-sizing: border-box;
+	color: white;
 }
 
 body {
@@ -41,6 +42,7 @@ body {
 
 .welcome input[type='button'] {
 	color: white;
+	font-weight: 600;
 	background-color: var(--color);
 	padding: 10px 15px;
 	width: 50%;
@@ -55,15 +57,65 @@ body {
 }
 /*****Welcome Page code end*****/
 
+/*****Game UI code starts*****/
+
+.game {
+	width: 450px;
+	height: 450px;
+	background-color: var(--color);
+	margin: auto;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 10px;
+	border-radius: 20px;
+}
+
+.game div {
+	background-color: var(--dark);
+	border-radius: 5px;
+	width: 102%;
+	height: 100%;
+	color: white;
+	font-size: 2em;
+	position: relative;
+	cursor: pointer;
+}
+
+.game div:active {
+	background-color: #444444;
+}
+
+.game div h1 {
+	position: absolute;
+	left: 35%;
+	top: 15%;
+}
+
+/*****Game UI code ends*****/
+
 @media only screen and (max-width: 1024px) {
 	.welcome input[type='button'] {
 		width: 70%;
+	}
+
+	.game {
+		width: 400px;
+		height: 400px;
 	}
 }
 
 @media only screen and (max-width: 768px) {
 	.welcome input[type='button'] {
 		width: 80%;
+	}
+
+	.game {
+		width: 350px;
+		height: 350px;
+	}
+
+	.game div {
+		font-size: 1.5em;
 	}
 }
 
@@ -73,5 +125,14 @@ body {
 	}
 	.welcome input[type='button'] {
 		width: 100%;
+	}
+
+	.game {
+		width: 275px;
+		height: 275px;
+	}
+
+	.game div {
+		font-size: 1em;
 	}
 }

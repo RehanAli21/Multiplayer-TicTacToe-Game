@@ -7,10 +7,10 @@ const Welcome = () => {
 			<h1>Welcome to Tic Tac Toe Game</h1>
 			<div>
 				<Link style={{ textDecoration: 'none' }} to='/local'>
-					<input type='button' value='Play Local' />
+					<input type='button' value='Play with friend offline' />
 				</Link>
 				<Link style={{ textDecoration: 'none' }} to='/friend'>
-					<input type='button' value='Play with friends' />
+					<input type='button' value='Play with friend online' />
 				</Link>
 				<Link style={{ textDecoration: 'none' }} to='/random'>
 					<input type='button' value='Play with random person' />
