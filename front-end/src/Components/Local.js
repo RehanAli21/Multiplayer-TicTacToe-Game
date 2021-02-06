@@ -4,8 +4,9 @@ import GameUI from './GameUI'
 const Local = () => {
 	return (
 		<div className='local'>
-			<div className='name'>
-				<h1>Local</h1>
+			<div className='names'>
+				<h2>Player 1</h2>
+				<h2>Player 2</h2>
 			</div>
 			<GameUI />
 		</div>

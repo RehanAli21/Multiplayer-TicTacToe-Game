@@ -57,24 +57,41 @@ body {
 }
 /*****Welcome Page code end*****/
 
+/*****Local Page code starts*****/
+
+.local {
+	width: 60%;
+	height: 90vh;
+	margin: 0 auto;
+}
+
+.local .names {
+	display: flex;
+	width: 100%;
+	place-content: space-around;
+	margin-top: 3vh;
+	margin-bottom: 5vh;
+}
+
+/*****Local Page code ends*****/
+
 /*****Game UI code starts*****/
 
 .game {
 	width: 450px;
 	height: 450px;
 	background-color: var(--color);
-	margin: auto;
+	margin: 0 auto;
 	display: grid;
-	grid-template-columns: repeat(3, 1fr);
 	grid-gap: 10px;
-	border-radius: 20px;
+	grid-template-columns: repeat(3, 1fr);
+	border: none;
 }
 
 .game div {
 	background-color: var(--dark);
-	border-radius: 5px;
-	width: 102%;
-	height: 100%;
+	width: 103%;
+	height: 103%;
 	color: white;
 	font-size: 2em;
 	position: relative;
@@ -102,6 +119,12 @@ body {
 		width: 400px;
 		height: 400px;
 	}
+
+	.local {
+		width: 65%;
+		height: 90vh;
+		margin: 0 auto;
+	}
 }
 
 @media only screen and (max-width: 768px) {
@@ -116,6 +139,12 @@ body {
 
 	.game div {
 		font-size: 1.5em;
+	}
+
+	.local {
+		width: 70%;
+		height: 90vh;
+		margin: 0 auto;
 	}
 }
 
@@ -134,5 +163,11 @@ body {
 
 	.game div {
 		font-size: 1em;
+	}
+
+	.local {
+		width: 90%;
+		height: 90vh;
+		margin: 0 auto;
 	}
 }
