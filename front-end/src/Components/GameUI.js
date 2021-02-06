@@ -1,11 +1,13 @@
 import React from 'react'
 
-const GameUI = ({ player }) => {
+const GameUI = ({ player, setPlayer }) => {
 	const insertValue = e => {
 		if (e.target.innerHTML === '') {
 			e.target.innerHTML = `<h1 id='${e.target.id}t'>${
 				player === 'one' ? 'X' : 'O'
 			}</h1>`
+
+			setPlayer(player === 'one' ? 'two' : 'one')
 		}
 	}
 
