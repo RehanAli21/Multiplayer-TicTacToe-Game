@@ -21,7 +21,10 @@ const GameUI = ({ player, setPlayer, setWinner }) => {
 			grid[points[0] - 1][points[1] - 1] = player === 'one' ? 'X' : 'O'
 
 			const winner = winnerChecker()
-			if (winner) setWinner(winner)
+			if (winner) {
+				console.log(winner)
+				setWinner(winner)
+			}
 
 			setPlayer(player === 'one' ? 'two' : 'one')
 		}
@@ -55,6 +58,22 @@ const GameUI = ({ player, setPlayer, setWinner }) => {
 			}
 			x = 0
 			o = 0
+		}
+
+		//for left diagonal
+		if (grid[0][0] === 'X' && grid[1][1] === 'X' && grid[2][2] === 'X') {
+			return 'X'
+		}
+		if (grid[0][0] === 'O' && grid[1][1] === 'O' && grid[2][2] === 'O') {
+			return 'O'
+		}
+
+		//for right diagonal
+		if (grid[0][2] === 'X' && grid[1][1] === 'X' && grid[2][0] === 'X') {
+			return 'X'
+		}
+		if (grid[0][2] === 'O' && grid[1][1] === 'O' && grid[2][0] === 'O') {
+			return 'O'
 		}
 	}
 
