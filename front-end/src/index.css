@@ -148,6 +148,50 @@ body {
 
 /*****Game UI code ends*****/
 
+/*****friend code starts*****/
+
+.friend .ask button {
+	display: block;
+	margin: 20vh auto;
+	padding: 20px;
+	border: none;
+	background-color: var(--color);
+	font-size: 2em;
+}
+
+.friend .ask button:active {
+	transform: scale(0.9);
+}
+
+.friend .join h1 {
+	margin: 10vh auto;
+}
+
+.friend .join input {
+	display: block;
+	margin: 10vh auto;
+	padding: 20px;
+	border: none;
+	border-bottom: 3px solid var(--color);
+	background-color: #444444;
+	color: white;
+	font-size: 1em;
+	font-weight: bolder;
+	width: 40vw;
+}
+
+.friend .join button {
+	padding: 10px 25px;
+	border: none;
+	background-color: var(--color);
+	font-size: 30px;
+}
+
+.friend .join button:active {
+	transform: scale(0.9);
+}
+/*****friend code ends*****/
+
 @media only screen and (max-width: 1024px) {
 	.welcome input[type='button'] {
 		width: 70%;
@@ -162,6 +206,11 @@ body {
 		width: 65%;
 		height: 90vh;
 		margin: 0 auto;
+	}
+
+	.friend .join input {
+		width: 75%;
+		font-size: 1em;
 	}
 }
 
@@ -183,6 +232,11 @@ body {
 		width: 70%;
 		height: 90vh;
 		margin: 0 auto;
+	}
+
+	.friend .join input {
+		width: 80%;
+		font-size: 1em;
 	}
 }
 
