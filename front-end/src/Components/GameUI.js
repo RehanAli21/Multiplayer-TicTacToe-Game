@@ -25,12 +25,14 @@ const GameUI = ({ player, setPlayer, setWinner }) => {
 				setWinner(winner)
 			} else {
 				let gridComplete = false
-				grid.forEach(ele => {
-					ele.forEach(e => {
-						if (e !== '') gridComplete = true
-						else gridComplete = false
-					})
-				})
+				for (let row = 0; row < 3; row++) {
+					for (let col = 0; col < 3; col++) {
+						if (grid[row][col] === '') {
+							gridComplete = false
+							break
+						} else gridComplete = true
+					}
+				}
 
 				if (gridComplete) setWinner('D')
 			}
@@ -59,8 +61,8 @@ const GameUI = ({ player, setPlayer, setWinner }) => {
 		//for checking columns
 		for (let row = 0; row < 3; row++) {
 			for (let col = 0; col < 3; col++) {
-				if (grid[row][col] === 'X') x++
-				else if (grid[row][col] === 'O') o++
+				if (grid[col][row] === 'X') x++
+				else if (grid[col][row] === 'O') o++
 
 				if (x === 3) return 'X'
 				else if (o === 3) return 'O'
