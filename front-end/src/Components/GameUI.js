@@ -22,8 +22,17 @@ const GameUI = ({ player, setPlayer, setWinner }) => {
 
 			const winner = winnerChecker()
 			if (winner) {
-				console.log(winner)
 				setWinner(winner)
+			} else {
+				let gridComplete = false
+				grid.forEach(ele => {
+					ele.forEach(e => {
+						if (e !== '') gridComplete = true
+						else gridComplete = false
+					})
+				})
+
+				if (gridComplete) setWinner('D')
 			}
 
 			setPlayer(player === 'one' ? 'two' : 'one')
