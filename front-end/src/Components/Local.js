@@ -20,6 +20,36 @@ const Local = () => {
 				setPlayer={setPlayer}
 				setWinner={setWinner}
 			/>
+			<div
+				style={{
+					zIndex:
+						winner === 'X' || winner === 'O' || winner === 'D'
+							? 0
+							: -1
+				}}
+				className='layer'></div>
+			<div
+				style={{
+					display:
+						winner === 'X' || winner === 'O' || winner === 'D'
+							? 'block'
+							: 'none'
+				}}
+				className='result'>
+				<h1>
+					{winner === 'X'
+						? 'Player 1 Wins'
+						: winner === 'O'
+						? 'Player 2 Wins'
+						: winner === 'D'
+						? 'Draw'
+						: null}
+				</h1>
+				<div>
+					<button>Main Menu</button>
+					<button>Restart Game</button>
+				</div>
+			</div>
 		</div>
 	)
 }
