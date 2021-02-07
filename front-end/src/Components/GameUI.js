@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 let grid = [
 	['', '', ''],
@@ -6,12 +6,10 @@ let grid = [
 	['', '', '']
 ]
 
-const GameUI = ({ player, setPlayer, setWinner }) => {
+const GameUI = ({ player, setPlayer, setWinner, restart }) => {
 	const insertValue = e => {
 		if (e.target.innerHTML === '') {
-			e.target.innerHTML = `<h1 id='${e.target.id}t'>${
-				player === 'one' ? 'X' : 'O'
-			}</h1>`
+			e.target.innerHTML = `<h1>${player === 'one' ? 'X' : 'O'}</h1>`
 
 			const points = [
 				e.target.id.split('')[e.target.id.length - 2],
@@ -22,6 +20,7 @@ const GameUI = ({ player, setPlayer, setWinner }) => {
 
 			const winner = winnerChecker()
 			if (winner) {
+				emptyGrid()
 				setWinner(winner)
 			} else {
 				let gridComplete = false
@@ -34,11 +33,22 @@ const GameUI = ({ player, setPlayer, setWinner }) => {
 					}
 				}
 
-				if (gridComplete) setWinner('D')
+				if (gridComplete) {
+					emptyGrid()
+					setWinner('D')
+				}
 			}
 
 			setPlayer(player === 'one' ? 'two' : 'one')
 		}
+	}
+
+	const emptyGrid = () => {
+		grid = [
+			['', '', ''],
+			['', '', ''],
+			['', '', '']
+		]
 	}
 
 	const winnerChecker = () => {
@@ -88,8 +98,16 @@ const GameUI = ({ player, setPlayer, setWinner }) => {
 		}
 	}
 
+	useEffect(() => {
+		for (let i = 1; i <= 3; i++) {
+			for (let j = 1; j <= 3; j++) {
+				document.getElementById(`game${i}${j}`).innerHTML = ''
+			}
+		}
+	}, [restart])
+
 	return (
-		<div className='game'>
+		<div id='game' className='game'>
 			<div id='game11' onClick={insertValue} className='button'></div>
 			<div id='game12' onClick={insertValue} className='button'></div>
 			<div id='game13' onClick={insertValue} className='button'></div>

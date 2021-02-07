@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import GameUI from './GameUI'
 
 const Local = () => {
 	const [player, setPlayer] = useState('one')
 	const [winner, setWinner] = useState('')
+	const [restart, setRestart] = useState(false)
 
 	return (
 		<div className='local'>
@@ -19,6 +21,7 @@ const Local = () => {
 				player={player}
 				setPlayer={setPlayer}
 				setWinner={setWinner}
+				restart={restart}
 			/>
 			<div
 				style={{
@@ -46,8 +49,16 @@ const Local = () => {
 						: null}
 				</h1>
 				<div>
-					<button>Main Menu</button>
-					<button>Restart Game</button>
+					<Link style={{ textDecoration: 'none' }} to='/'>
+						<button>Main Menu</button>
+					</Link>
+					<button
+						onClick={() => {
+							setRestart(!restart)
+							setWinner('')
+						}}>
+						Restart Game
+					</button>
 				</div>
 			</div>
 		</div>
