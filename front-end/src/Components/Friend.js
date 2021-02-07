@@ -27,7 +27,7 @@ const Friend = () => {
 				<button>Join</button>
 			</div>
 			<div style={{ display: newG ? 'block' : 'none' }} className='start'>
-				<h3>asdjhkjh234jhsdf812kklk231e1123</h3>
+				<h3>Key: asdjhkjh234jhsdf812kklk231e1123</h3>
 				<p>
 					Copy this key and send it to your friend and ask friend to
 					join using this key.

@@ -190,6 +190,38 @@ body {
 .friend .join button:active {
 	transform: scale(0.9);
 }
+
+.friend .start h3 {
+	margin: 10vh auto;
+}
+
+.friend .start .loading {
+	margin-top: 10vh;
+	background-image: linear-gradient(
+		90deg,
+		var(--second-color),
+		var(--color),
+		var(--second-color)
+	);
+	background-size: 200%;
+	background-position: left;
+	background-clip: text;
+	animation: loading 1s infinite alternate-reverse;
+}
+
+@keyframes loading {
+	0% {
+		background-position: left;
+	}
+	100% {
+		background-position: right;
+	}
+}
+
+.friend .start .loading h1 {
+	color: transparent;
+}
+
 /*****friend code ends*****/
 
 @media only screen and (max-width: 1024px) {
