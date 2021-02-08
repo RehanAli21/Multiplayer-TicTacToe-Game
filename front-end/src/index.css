@@ -191,6 +191,29 @@ body {
 	transform: scale(0.9);
 }
 
+.friend .start input {
+	display: block;
+	margin: 10vh auto 2vh auto;
+	padding: 20px;
+	border: none;
+	border-bottom: 3px solid var(--color);
+	background-color: #444444;
+	color: white;
+	font-size: 1em;
+	font-weight: bolder;
+	width: 40vw;
+}
+.friend .start button {
+	padding: 7px 15px;
+	border: none;
+	background-color: var(--color);
+	font-size: 22px;
+}
+
+.friend .start button:active {
+	transform: scale(0.9);
+}
+
 .friend .start h3 {
 	margin: 10vh auto;
 }
